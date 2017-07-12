@@ -1,0 +1,43 @@
+{
+    "name": "spectre",
+    "version": "0.0.1",
+    "description": "React implemetation of Spectre.css",
+    "main": "index.js",
+    "repository": "git@github.com:thundernet8/spectre.git",
+    "author": "wuxueqian <wuxueqian2010@hotmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^15.0.37",
+        "@types/react-dom": "^15.5.1",
+        "babel-plugin-import": "^1.2.1",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "babel-register": "^6.24.1",
+        "cross-env": "^5.0.1",
+        "eslint": "^4.2.0",
+        "eslint-config-airbnb": "^15.0.2",
+        "lint-staged": "^4.0.1",
+        "pre-commit": "^1.2.2",
+        "rimraf": "^2.6.1",
+        "stylelint-config-standard": "^16.0.0",
+        "ts-loader": "^2.2.2",
+        "tslint": "^5.5.0",
+        "typescript": "^2.4.1",
+        "webpack": "^3.2.0"
+    },
+    "scripts": {
+        "lint-staged": "lint-staged",
+        "lint-staged:ts": "tsc && node node_modules/tslint/bin/tslint -c .tslintrc.json",
+        "lint-staged:es": "eslint ./.eslintrc.js",
+        "lint-staged:md": "eslint --ext '.md'"
+    },
+    "lint-staged": {
+        "components/**/*.tsx": ["lint-staged:ts"],
+        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
+        "{components}/**/*.scss": "stylelint --syntax scss",
+        "components/*/demo/*.md": ["lint-staged:demo"]
+    },
+    "pre-commit": "lint-staged"
+}
