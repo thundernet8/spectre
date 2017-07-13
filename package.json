@@ -43,23 +43,17 @@
         "webpack": "^3.2.0"
     },
     "scripts": {
-        "dist": "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config webpack.config.babel.js",
+        "dist": "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --hide-modules --config webpack.config.babel.js",
         "lint-staged": "lint-staged",
         "lint-staged:ts": "tsc && node node_modules/tslint/bin/tslint -c .tslintrc.json",
         "lint-staged:es": "eslint ./.eslintrc.js",
         "lint-staged:md": "eslint --ext '.md'"
     },
     "lint-staged": {
-        "components/**/*.tsx": [
-            "lint-staged:ts"
-        ],
-        "{tests,components}/**/*.{js,jsx}": [
-            "lint-staged:es"
-        ],
+        "components/**/*.tsx": ["lint-staged:ts"],
+        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
         "{components}/**/*.scss": "stylelint --syntax scss",
-        "components/*/demo/*.md": [
-            "lint-staged:demo"
-        ]
+        "components/*/demo/*.md": ["lint-staged:demo"]
     },
     "pre-commit": "lint-staged",
     "dependencies": {

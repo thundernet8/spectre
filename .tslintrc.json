@@ -68,7 +68,7 @@
             true,
             {
                 "singleline": "never",
-                "multiline": "always"
+                "multiline": "never"
             }
         ],
         "triple-equals": [true, "allow-null-check"],
