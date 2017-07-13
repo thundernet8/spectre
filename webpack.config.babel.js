@@ -4,6 +4,7 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 
 const genConfig = minimal => ({
+    devtool: "#source-map", // '#eval-source-map'
     node: {
         __filename: false,
         __dirname: false
