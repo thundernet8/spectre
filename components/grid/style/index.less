@@ -1,0 +1,19 @@
+@import "../../styles/vars";
+@import "../../styles/mixins/index";
+@import "./mixin";
+
+.@{prefix}-row {
+    .make-row();
+    display: block;
+}
+
+.@{prefix}-row-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &:before,
+    &:after {
+        display: flex;
+    }
+}

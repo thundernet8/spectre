@@ -1,0 +1,11 @@
+@import "../../styles/vars";
+@import "../../styles/mixins/index";
+// grid mixins
+
+.make-row(@gutter: @grid-gutter-width) {
+    position: relative;
+    margin-left: (@gutter / -2);
+    margin-right: (@gutter / -2);
+    height: auto;
+    .clearfix;
+}

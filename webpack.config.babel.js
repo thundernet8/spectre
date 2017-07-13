@@ -10,14 +10,14 @@ const genConfig = minimal => ({
         __dirname: false
     },
     entry: {
-        spectre: "./components/index.tsx"
+        spectre: ["./components/index.tsx", "./components/styles.tsx"]
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
         filename: minimal ? "[name].min.js" : "[name].js"
     },
     resolve: {
-        extensions: [".ts", ".tsx"]
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
     target: "web",
     module: {
@@ -29,15 +29,15 @@ const genConfig = minimal => ({
             },
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
+                loader: "babel-loader!ts-loader",
                 exclude: /node_modules/
             },
             {
-                test: /\.scss$/,
+                test: /\.less$/,
                 exclude: [/node_modules/],
                 loader: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader!sass-loader"
+                    use: "css-loader!less-loader"
                 })
             }
         ]
@@ -51,7 +51,8 @@ const genConfig = minimal => ({
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
-            }
+            },
+            sourceMap: true
         }),
         new ExtractTextPlugin({
             filename: minimal ? "spectre.min.css" : "spectre.css",

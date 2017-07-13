@@ -8,8 +8,10 @@
         "noUnusedParameters": true,
         "noUnusedLocals": true,
         "target": "es6",
+        "module": "commonjs",
         "lib": ["dom", "es7"],
-        "typeRoots": ["node_modules/@types", "typings"]
+        "typeRoots": ["node_modules/@types", "typings"],
+        "outDir": "./tmp"
     },
     "exclude": ["node_modules"]
 }
