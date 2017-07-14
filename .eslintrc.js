@@ -17,6 +17,8 @@ const eslintrc = {
     },
     plugins: ["markdown", "react", "babel"],
     rules: {
+        indent: ["error", 4],
+        quotes: ["error", "double", { allowTemplateLiterals: true }],
         "func-names": 0,
         "arrow-body-style": 0,
         "react/sort-comp": 0,
@@ -37,6 +39,8 @@ const eslintrc = {
         "react/require-extension": 0,
         "jsx-a11y/no-static-element-interactions": 0,
         "jsx-a11y/anchor-has-content": 0,
+        "jsx-a11y/href-no-hash": 0,
+        "jsx-a11y/anchor-is-valid": ["warn", { aspects: ["invalidHref"] }],
         "react/no-danger": 0,
         "comma-dangle": ["error", "always-multiline"]
     }

@@ -8,10 +8,9 @@
         "noUnusedParameters": true,
         "noUnusedLocals": true,
         "target": "es6",
-        "module": "es6",
         "lib": ["dom", "es7"],
         "typeRoots": ["node_modules/@types", "typings"],
         "outDir": "tmp"
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "dist"]
 }
