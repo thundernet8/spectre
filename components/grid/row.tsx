@@ -34,8 +34,8 @@ export default class Row extends React.Component<RowProps, any> {
         } = this.props;
         const prefixCls = "spt-row";
         const classes = classNames(
+            prefixCls,
             {
-                prefixCls: true,
                 [`${prefixCls}-flex`]: true,
                 [`${prefixCls}-flex-${justify}`]: !!justify,
                 [`${prefixCls}-flex-${align}`]: !!align
