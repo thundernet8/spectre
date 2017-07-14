@@ -2,6 +2,47 @@ import path from "path";
 import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import pkg from "./package.json";
+
+const getPlugins = (minimal = true) => {
+    let plugins = [
+        new webpack.BannerPlugin(
+            pkg.name +
+                " v" +
+                pkg.version +
+                "\n\nCopyright 2017-present, WuXueqian.\nAll rights reserved."
+        ),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        }),
+        new ExtractTextPlugin({
+            filename: pkg.name + (minimal ? ".min.css" : ".css"),
+            disable: false,
+            allChunks: true
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.min\.css$/g,
+            cssProcessor: require("cssnano"),
+            cssProcessorOptions: { discardComments: { removeAll: true } },
+            canPrint: true
+        })
+    ];
+    if (minimal) {
+        plugins.push(
+            new webpack.optimize.UglifyJsPlugin({
+                compress: minimal
+                    ? {
+                          warnings: false
+                      }
+                    : false,
+                sourceMap: true
+            })
+        );
+    }
+    return plugins;
+};
 
 const genConfig = minimal => ({
     devtool: "#source-map", // '#eval-source-map'
@@ -10,16 +51,18 @@ const genConfig = minimal => ({
         __dirname: false
     },
     entry: {
-        spectre: ["./components/index.tsx", "./components/styles.tsx"]
+        spectre: ["./components/index.ts"]
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
-        filename: minimal ? "[name].min.js" : "[name].js"
+        filename: minimal ? "[name].min.js" : "[name].js",
+        library: pkg.name,
+        libraryTarget: "umd",
+        umdNamedDefine: true
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
-    target: "web",
     module: {
         rules: [
             {
@@ -42,30 +85,7 @@ const genConfig = minimal => ({
             }
         ]
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify("production")
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
-            sourceMap: true
-        }),
-        new ExtractTextPlugin({
-            filename: minimal ? "spectre.min.css" : "spectre.css",
-            disable: false,
-            allChunks: true
-        }),
-        new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.min\.css$/g,
-            cssProcessor: require("cssnano"),
-            cssProcessorOptions: { discardComments: { removeAll: true } },
-            canPrint: true
-        })
-    ]
+    plugins: getPlugins(minimal)
 });
 
 export default [genConfig(false), genConfig(true)];

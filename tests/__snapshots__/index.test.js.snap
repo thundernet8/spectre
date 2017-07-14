@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dist files export modules correctly 1`] = `
+Array [
+  "Col",
+  "Row",
+  "version",
+]
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid renders correctly 1`] = `
+<div
+  className="spt-row spt-row-flex"
+  style={
+    Object {
+      "marginLeft": -5,
+      "marginRight": -5,
+    }
+  }
+>
+  <div
+    className="spt-col-4"
+    style={
+      Object {
+        "paddingLeft": 5,
+        "paddingRight": 5,
+      }
+    }
+  >
+    Left Col
+  </div>
+  <div
+    className="spt-col-20"
+    style={
+      Object {
+        "paddingLeft": 5,
+        "paddingRight": 5,
+      }
+    }
+  >
+    Right Col
+  </div>
+</div>
+`;
