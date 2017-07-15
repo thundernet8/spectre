@@ -2,10 +2,15 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - "8"
+    - "8"
 
 matrix:
   fast_finish: true
+
+cache:
+    directories:
+    - node_modules
+    - "$HOME/.cache"
 
 before_install:
     # install yarn
@@ -20,3 +25,9 @@ script:
     - yarn dist
     - yarn lib
     - yarn test
+
+branches:
+    only:
+    - master
+    - test
+    - release
