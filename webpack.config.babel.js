@@ -21,7 +21,7 @@ const getPlugins = (minimal = true) => {
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.min\.css$/g,
-            cssProcessor: require("cssnano"),
+            cssProcessor: require("cssnano"), // eslint-disable-line global-require
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: true
         })
@@ -31,8 +31,8 @@ const getPlugins = (minimal = true) => {
             new webpack.optimize.UglifyJsPlugin({
                 compress: minimal
                     ? {
-                          warnings: false
-                      }
+                          warnings: false // eslint-disable-line
+                      } // eslint-disable-line
                     : false,
                 sourceMap: true
             })

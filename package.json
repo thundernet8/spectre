@@ -49,6 +49,7 @@
         "react-test-renderer": "^15.6.1",
         "rimraf": "^2.6.1",
         "style-loader": "^0.18.2",
+        "stylelint": "^7.13.0",
         "stylelint-config-standard": "^16.0.0",
         "ts-jest": "^20.0.7",
         "ts-loader": "^2.2.2",
@@ -62,19 +63,21 @@
     "scripts": {
         "test": "jest --config .jest.js",
         "dist": "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --hide-modules --colors --config webpack.config.babel.js",
-        "lib": "rimraf lib && tsc && rcp './components/**/*.less' ./lib -v",
+        "lib": "rimraf lib && tsc && rcp './components/**/*.less' ./lib",
         "prepublish": "npm run dist && npm run lib && npm run lint",
-        "lint": "lint-staged",
+        "lint": "npm run lint:ts && npm run lint:es && npm run lint:style",
+        "lint:ts": "tsc && tslint -e node_modules typings -c .tslintrc.json components/**/*.tsx",
+        "lint:es": "eslint tests components ./webpack.config.babel.js --ext '.js,.jsx'",
+        "lint:style": "stylelint \"{site,components}/**/*.less\" --syntax less",
         "lint-staged": "lint-staged",
-        "lint-staged:ts": "tsc && node node_modules/tslint/bin/tslint -c .tslintrc.json",
-        "lint-staged:es": "eslint ./.eslintrc.js",
+        "lint-staged:ts": "tsc && tslint --fix -c .tslintrc.json",
+        "lint-staged:es": "eslint ./webpack.config.babel.js",
         "lint-staged:md": "eslint --ext '.md'"
     },
     "lint-staged": {
         "components/**/*.tsx": ["lint-staged:ts"],
         "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
-        "{components}/**/*.scss": "stylelint --syntax scss",
-        "components/*/demo/*.md": ["lint-staged:demo"]
+        "{components,site}/**/*.less": "stylelint --syntax less"
     },
     "pre-commit": "lint-staged",
     "dependencies": {
