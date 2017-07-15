@@ -5,12 +5,9 @@ import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import pkg from "./package.json";
 
 const getPlugins = (minimal = true) => {
-    let plugins = [
+    const plugins = [
         new webpack.BannerPlugin(
-            pkg.name +
-                " v" +
-                pkg.version +
-                "\n\nCopyright 2017-present, WuXueqian.\nAll rights reserved."
+            `${pkg.name} v${pkg.version}\n\nCopyright 2017-present, WuXueqian.\nAll rights reserved.`
         ),
         new webpack.DefinePlugin({
             "process.env": {
@@ -24,7 +21,7 @@ const getPlugins = (minimal = true) => {
         }),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.min\.css$/g,
-            cssProcessor: require("cssnano"),
+            cssProcessor: require("cssnano"), // eslint-disable-line global-require
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: true
         })
@@ -34,8 +31,8 @@ const getPlugins = (minimal = true) => {
             new webpack.optimize.UglifyJsPlugin({
                 compress: minimal
                     ? {
-                          warnings: false
-                      }
+                          warnings: false // eslint-disable-line
+                      } // eslint-disable-line
                     : false,
                 sourceMap: true
             })
@@ -51,7 +48,8 @@ const genConfig = minimal => ({
         __dirname: false
     },
     entry: {
-        spectre: ["./components/index.ts"]
+        spectre: ["./components/index.ts"],
+        spectreStyle: ["./components/styles.ts"]
     },
     output: {
         path: path.resolve(__dirname, "./dist"),

@@ -11,7 +11,7 @@
         "module": "es6",
         "lib": ["dom", "es7"],
         "typeRoots": ["node_modules/@types", "typings"],
-        "outDir": "tmp"
+        "outDir": "./lib"
     },
     "exclude": ["node_modules", "dist"]
 }
