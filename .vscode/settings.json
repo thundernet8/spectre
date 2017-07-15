@@ -1,4 +1,15 @@
 {
     "prettier.tabWidth": 4,
+    "prettier.cssEnable": ["css", "less", "scss"],
+    "prettier.typescriptEnable": ["typescript", "typescriptreact"],
+    "prettier.javascriptEnable": ["javascript", "javascriptreact"],
+    "prettier.jsonEnable": ["json"],
+    "prettier.semi": true,
+    "prettier.trailingComma": "none",
+    "prettier.singleQuote": false,
+    "prettier.useTabs": false,
+    "prettier.jsxBracketSameLine": false,
+    "prettier.bracketSpacing": true,
+    "prettier.eslintIntegration": false,
     "editor.formatOnSave": true
 }

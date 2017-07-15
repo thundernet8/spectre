@@ -5,12 +5,9 @@ import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import pkg from "./package.json";
 
 const getPlugins = (minimal = true) => {
-    let plugins = [
+    const plugins = [
         new webpack.BannerPlugin(
-            pkg.name +
-                " v" +
-                pkg.version +
-                "\n\nCopyright 2017-present, WuXueqian.\nAll rights reserved."
+            `${pkg.name} v${pkg.version}\n\nCopyright 2017-present, WuXueqian.\nAll rights reserved.`
         ),
         new webpack.DefinePlugin({
             "process.env": {
@@ -51,7 +48,8 @@ const genConfig = minimal => ({
         __dirname: false
     },
     entry: {
-        spectre: ["./components/index.ts"]
+        spectre: ["./components/index.ts"],
+        spectreStyle: ["./components/styles.ts"]
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
