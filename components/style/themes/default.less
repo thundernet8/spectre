@@ -1,1 +1,82 @@
 // Default themes
+
+@prefix: spt;
+
+// Fonts
+@font-family : "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+@code-family : Consolas, Menlo, Courier, monospace;
+@font-size-base : 1.4rem;
+@line-height-base : 1.5;
+
+// Base Colors
+@primary-color : #5764c6;
+@secondary-color: #eff1fa;
+@info-color : #50BFFF;
+@success-color : #32b643;
+@error-color : #e85600;
+@warning-color : #ffb700;
+
+@border-color: #f0f1f4;
+@background-color: #f8f9fa;
+@light-color: #fff;
+
+@text-color: #50596c;
+@heading-text-color: #454d5d;
+@dark-color: @heading-text-color;
+@gray-dark-color: #727e96;
+@gray-color: #acb3c2;
+@gray-light-color: #e7e9ed;
+
+@link-color: @primary-color;
+@link-hover-color: #3b49af;
+@link-active-color: @link-hover-color;
+
+@disabled-color: @gray-light-color;
+
+@body-background : #fff;
+@heading-color : fade(#000, 85%);
+@text-color-secondary : fade(#000, 43%);
+@heading-color-dark : fade(#fff, 97%);
+@text-color-dark : fade(#fff, 91%);
+@text-color-secondary-dark: fade(#fff, 67%);
+
+// Media queries breakpoints
+// Extra small screen / phone
+@screen-xs : 480px;
+@screen-xs-min : @screen-xs;
+
+// Small screen / tablet
+@screen-sm : 768px;
+@screen-sm-min : @screen-sm;
+
+// Medium screen / desktop
+@screen-md : 992px;
+@screen-md-min : @screen-md;
+
+// Large screen / wide desktop
+@screen-lg : 1200px;
+@screen-lg-min : @screen-lg;
+
+// Extra Large screen / full hd
+@screen-xl : 1600px;
+@screen-xl-min : @screen-xl;
+
+// provide a maximum
+@screen-xs-max : (@screen-sm-min - 1);
+@screen-sm-max : (@screen-md-min - 1);
+@screen-md-max : (@screen-lg-min - 1);
+@screen-lg-max : (@screen-xl-min - 1);
+
+// Grid system
+@grid-columns : 24;
+@grid-gutter-width : 0;

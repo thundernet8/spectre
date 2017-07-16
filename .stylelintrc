@@ -6,6 +6,7 @@
         "comment-empty-line-before": null,
         "declaration-bang-space-before": null,
         "declaration-empty-line-before": null,
+        "declaration-colon-newline-after": null,
         "function-comma-newline-after": null,
         "function-name-case": null,
         "function-parentheses-newline-inside": null,
