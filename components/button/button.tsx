@@ -13,7 +13,7 @@ export type ButtonType =
     | "info"
     | "danger";
 export type ButtonShape = "circle" | "circle-outline" | "square";
-export type ButtonSize = "small" | "large" | "block";
+export type ButtonSize = "small" | "large";
 
 export interface ButtonProps {
     type?: ButtonType;
@@ -29,6 +29,7 @@ export interface ButtonProps {
     style?: React.CSSProperties;
     prefixCls?: string;
     className?: string;
+    block?: boolean;
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
@@ -37,18 +38,20 @@ export default class Button extends React.Component<ButtonProps, any> {
     static defaultProps = {
         prefixCls: "spt-btn",
         loading: false,
-        clicked: false
+        clicked: false,
+        block: false
     };
 
     static propTypes = {
         type: PropTypes.string,
         shape: PropTypes.oneOf(["circle", "circle-outline", "square"]),
-        size: PropTypes.oneOf(["large", "default", "small", "block"]), // block means full width
+        size: PropTypes.oneOf(["large", "default", "small"]),
         htmlType: PropTypes.oneOf(["submit", "button", "reset"]),
         onClick: PropTypes.func,
         loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
         className: PropTypes.string,
-        icon: PropTypes.string
+        icon: PropTypes.string,
+        block: PropTypes.bool
     };
 
     timeout: number;
@@ -98,14 +101,14 @@ export default class Button extends React.Component<ButtonProps, any> {
         if (onClick) {
             onClick(e);
         }
-    }
+    };
 
     // Handle auto focus when click button in Chrome
     handleMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (this.props.onMouseUp) {
             this.props.onMouseUp(e);
         }
-    }
+    };
 
     render() {
         const {
@@ -117,6 +120,7 @@ export default class Button extends React.Component<ButtonProps, any> {
             children,
             icon,
             prefixCls,
+            block,
             ...others
         } = this.props;
 
@@ -131,8 +135,6 @@ export default class Button extends React.Component<ButtonProps, any> {
                 break;
             case "small":
                 sizeCls = "sm";
-            case "block":
-                sizeCls = "block";
             default:
                 break;
         }
@@ -143,7 +145,8 @@ export default class Button extends React.Component<ButtonProps, any> {
             [`${prefixCls}-${sizeCls}`]: sizeCls,
             [`${prefixCls}-icon-only`]: !children && icon && !loading,
             [`${prefixCls}-loading`]: loading,
-            [`${prefixCls}-clicked`]: clicked
+            [`${prefixCls}-clicked`]: clicked,
+            [`${prefixCls}-block`]: block
         });
 
         const iconType = loading ? "loading" : icon;

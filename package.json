@@ -76,15 +76,11 @@
         "site": "npm run lib && cd site && npm run dev"
     },
     "lint-staged": {
-        "components/**/*.tsx": [
-            "lint-staged:ts"
-        ],
-        "{tests,components}/**/*.{js,jsx}": [
-            "lint-staged:es"
-        ],
+        "components/**/*.tsx": ["lint-staged:ts"],
+        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
         "{components,site}/**/*.less": "stylelint --syntax less"
     },
-    "pre-commit": "lint-staged",
+    "pre-commit": "lint-staged && git add -A",
     "dependencies": {
         "classnames": "^2.2.5",
         "omit.js": "^1.0.0",
