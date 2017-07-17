@@ -12,7 +12,9 @@ export const __DEV__ = process.env.NODE_ENV !== "production";
 
 const getPlugins = () => {
     let plugins = [
-        new WebpackBundleSizeAnalyzerPlugin("../reports/bundle-report.txt"),
+        new WebpackBundleSizeAnalyzerPlugin(
+            path.resolve(__dirname, "../reports/bundle-report.txt")
+        ),
         new WebpackStableChunkId(),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.DllReferencePlugin({

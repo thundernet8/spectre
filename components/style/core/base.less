@@ -20,10 +20,11 @@ body {
 }
 
 html {
-    line-height: 1.15;
+    line-height: @html-line-height;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-size: 62.5%;
+    font-size: @html-font-size; // 62.5%
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -111,7 +112,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: @heading-color;
+    color: @heading-text-color;
 }
 
 // Links
@@ -126,10 +127,12 @@ a {
     &:focus {
         text-decoration: underline;
         text-decoration-skip: ink;
+        .control-shadow();
     }
 
     &:hover {
         color: @link-hover-color;
+        text-decoration: underline;
     }
 
     &:active {
@@ -139,7 +142,6 @@ a {
     &:active,
     &:hover {
         outline: 0;
-        text-decoration: none;
     }
 
     &[disabled] {
