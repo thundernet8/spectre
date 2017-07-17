@@ -98,14 +98,14 @@ export default class Button extends React.Component<ButtonProps, any> {
         if (onClick) {
             onClick(e);
         }
-    };
+    }
 
     // Handle auto focus when click button in Chrome
     handleMouseUp = (e: React.MouseEvent<HTMLButtonElement>) => {
         if (this.props.onMouseUp) {
             this.props.onMouseUp(e);
         }
-    };
+    }
 
     render() {
         const {
