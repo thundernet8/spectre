@@ -5,3 +5,9 @@
 .shadow-variant(@offset) {
     box-shadow: 0 @offset (@offset+.1rem)*2 fade(@dark-color, 30%);
 }
+
+// Toast variant
+.toast-variant(@color: @dark-color) {
+    background: fade(@color, 90%);
+    border-color: @color;
+}

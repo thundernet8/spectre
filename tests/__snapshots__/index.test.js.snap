@@ -2,6 +2,7 @@
 
 exports[`dist files export modules correctly 1`] = `
 Array [
+  "Button",
   "Col",
   "Row",
   "version",
