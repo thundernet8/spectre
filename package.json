@@ -80,7 +80,7 @@
         "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
         "{components,site}/**/*.less": "stylelint --syntax less"
     },
-    "pre-commit": "lint-staged && git add -A",
+    "pre-commit": "lint-staged",
     "dependencies": {
         "classnames": "^2.2.5",
         "omit.js": "^1.0.0",
