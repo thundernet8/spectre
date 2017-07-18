@@ -1,7 +1,8 @@
 import React from "react";
+import CommonLayout from "../components/commonLayout";
 
 export default class SpectreComponent extends React.Component {
     render() {
-        return <div>SpectreComponent</div>;
+        return <CommonLayout>SpectreComponent</CommonLayout>;
     }
 }

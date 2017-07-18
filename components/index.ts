@@ -11,9 +11,13 @@ if (ENV !== "production" && ENV !== "test" && typeof window !== "undefined") {
 
 export { default as Button } from "./button";
 
+export { default as Breadcrumb } from "./breadcrumb";
+
 export { default as Col } from "./col";
 
 export { default as Icon } from "./icon";
+
+export { default as Layout } from "./layout";
 
 export { default as Row } from "./row";
 

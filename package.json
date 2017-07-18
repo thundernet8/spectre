@@ -58,6 +58,7 @@
         "tslint-react": "^3.0.0",
         "typescript": "^2.4.1",
         "typescript-babel-jest": "^1.0.4",
+        "warning": "^3.0.0",
         "webpack": "^3.2.0"
     },
     "scripts": {
@@ -76,8 +77,12 @@
         "site": "npm run lib && cd site && npm run dev"
     },
     "lint-staged": {
-        "components/**/*.tsx": ["lint-staged:ts"],
-        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
+        "components/**/*.tsx": [
+            "lint-staged:ts"
+        ],
+        "{tests,components}/**/*.{js,jsx}": [
+            "lint-staged:es"
+        ],
         "{components,site}/**/*.less": "stylelint --syntax less"
     },
     "pre-commit": "lint-staged",
