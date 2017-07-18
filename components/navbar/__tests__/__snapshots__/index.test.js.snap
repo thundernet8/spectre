@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar renders correctly 1`] = `
+<div
+  className="spt-navbar"
+  style={undefined}
+>
+  <section
+    className="spt-navbar spt-navbar-section"
+    style={undefined}
+  >
+    Left section
+  </section>
+  <section
+    className="spt-navbar spt-navbar-center"
+    style={undefined}
+  >
+    Center section
+  </section>
+  <section
+    className="spt-navbar spt-navbar-section"
+    style={undefined}
+  >
+    Right section
+  </section>
+</div>
+`;

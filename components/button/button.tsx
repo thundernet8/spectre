@@ -30,6 +30,8 @@ export interface ButtonProps {
     prefixCls?: string;
     className?: string;
     block?: boolean;
+    isLink?: boolean;
+    link?: string;
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
@@ -39,7 +41,9 @@ export default class Button extends React.Component<ButtonProps, any> {
         prefixCls: "spt-btn",
         loading: false,
         clicked: false,
-        block: false
+        block: false,
+        isLink: false,
+        link: "javascript:;"
     };
 
     static propTypes = {
@@ -51,7 +55,9 @@ export default class Button extends React.Component<ButtonProps, any> {
         loading: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
         className: PropTypes.string,
         icon: PropTypes.string,
-        block: PropTypes.bool
+        block: PropTypes.bool,
+        isLink: PropTypes.bool,
+        link: PropTypes.string
     };
 
     timeout: number;
@@ -121,6 +127,8 @@ export default class Button extends React.Component<ButtonProps, any> {
             icon,
             prefixCls,
             block,
+            isLink,
+            link,
             ...others
         } = this.props;
 
@@ -152,6 +160,20 @@ export default class Button extends React.Component<ButtonProps, any> {
         const iconType = loading ? "loading" : icon;
         const iconNode = iconType ? <Icon type={iconType} /> : null;
 
+        if (isLink) {
+            return (
+                <a
+                    href={link}
+                    {...omit(others, ["clicked"])}
+                    className={classes}
+                    onMouseUp={this.handleMouseUp}
+                    onClick={this.handleClick}
+                >
+                    {iconNode}
+                    {children}
+                </a>
+            );
+        }
         return (
             <button
                 {...omit(others, ["loading", "clicked"])}
@@ -164,5 +186,12 @@ export default class Button extends React.Component<ButtonProps, any> {
                 {children}
             </button>
         );
+    }
+}
+
+export class LinkButton extends React.Component<ButtonProps, any> {
+    render() {
+        const props = Object.assign({}, this.props, { isLink: true });
+        return <Button {...props} />;
     }
 }

@@ -7,3 +7,4 @@ import "./button/style/index.less";
 import "./icon/style/index.less";
 import "./layout/style/index.less";
 import "./breadcrumb/style/index.less";
+import "./navbar/style/index.less";

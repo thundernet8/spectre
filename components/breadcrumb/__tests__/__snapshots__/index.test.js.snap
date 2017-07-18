@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadCrumb renders correctly 1`] = `
+<div
+  className="spt-breadcrumb"
+  style={undefined}
+>
+  <span>
+    <span
+      className="spt-breadcrumb-link"
+    >
+      Home
+    </span>
+    <span
+      className="spt-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    <span
+      className="spt-breadcrumb-link"
+    >
+      Posts
+    </span>
+    <span
+      className="spt-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    <span
+      className="spt-breadcrumb-link"
+    >
+      One post name
+    </span>
+    <span
+      className="spt-breadcrumb-separator"
+    >
+      /
+    </span>
+  </span>
+</div>
+`;
