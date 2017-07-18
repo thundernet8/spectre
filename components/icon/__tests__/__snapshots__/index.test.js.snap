@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon icon renders correctly 1`] = `
+<i
+  className="spticon spticon-upward"
+/>
+`;
+
+exports[`Icon icon renders correctly 2`] = `
+<i
+  className="spticon fa fa-home"
+  fontset="fa"
+/>
+`;

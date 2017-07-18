@@ -9,7 +9,11 @@ if (ENV !== "production" && ENV !== "test" && typeof window !== "undefined") {
 
 // full export
 
+export { default as Button } from "./button";
+
 export { default as Col } from "./col";
+
+export { default as Icon } from "./icon";
 
 export { default as Row } from "./row";
 

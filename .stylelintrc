@@ -12,6 +12,7 @@
         "function-parentheses-newline-inside": null,
         "function-max-empty-lines": null,
         "function-whitespace-after": null,
+        "value-list-comma-newline-after": null,
         "indentation": null,
         "number-leading-zero": null,
         "number-no-trailing-zeros": null,

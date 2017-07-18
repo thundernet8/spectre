@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Group button group renders correctly 1`] = `
+<div
+  className="spt-btn-group spt-btn-group-lg"
+/>
+`;
+
+exports[`Button button renders correctly 1`] = `
+<button
+  className="spt-btn spt-btn-primary spt-btn-lg"
+  onClick={[Function]}
+  onMouseUp={[Function]}
+  type="button"
+/>
+`;

@@ -16,39 +16,69 @@
     sans-serif;
 @code-family : Consolas, Menlo, Courier, monospace;
 @font-size-base : 1.4rem;
+@font-size: @font-size-base;
+@font-size-sm: 1.2rem;
+@font-size-lg: 1.6rem;
+@html-font-size: 10px;
+@html-line-height: 1.428571429;
 @line-height-base : 1.5;
 
-// Base Colors
-@primary-color : #5764c6;
-@secondary-color: #eff1fa;
-@info-color : #50BFFF;
-@success-color : #32b643;
-@error-color : #e85600;
-@warning-color : #ffb700;
+// Sizes
+@layout-padding: 1rem;
+@layout-padding-lg: 1.5rem;
+@control-min-width: 18rem;
+@border-radius: .2rem;
+@border-width: .1rem;
 
-@border-color: #f0f1f4;
-@background-color: #f8f9fa;
+// Colors
+// Core colors
+@primary-color: #5764c6;
+@primary-color-dark: darken(@primary-color, 3%);
+@primary-color-light: lighten(@primary-color, 3%);
+@secondary-color: lighten(@primary-color, 40%);
+@secondary-color-dark: darken(@secondary-color, 3%);
+@secondary-color-light: lighten(@secondary-color, 3%);
+
+// Gray colors
+@dark-color: #454d5d;
 @light-color: #fff;
+@gray-color: lighten(@dark-color, 40%);
+@gray-color-dark: darken(@gray-color, 20%);
+@gray-color-light: lighten(@gray-color, 20%);
 
-@text-color: #50596c;
-@heading-text-color: #454d5d;
-@dark-color: @heading-text-color;
-@gray-dark-color: #727e96;
-@gray-color: #acb3c2;
-@gray-light-color: #e7e9ed;
+@border-color: lighten(@gray-color-light, 3%);
+@border-color-dark: darken(@border-color, 15%);
+@bg-color: lighten(@dark-color, 66%);
+@bg-color-dark: darken(@bg-color, 3%);
+@bg-color-light: @light-color;
+
+// Control colors
+@control-color-success: #32b643;
+@control-color-warning: #ffb700;
+@control-color-error: #e85600;
+@control-color-info : #50BFFF;
+@success-color : @control-color-success;
+@error-color : @control-color-error;
+@warning-color : @control-color-warning;
+@info-color: @control-color-info;
+
+// Other colors
+@code-color: #e06870;
+@highlight-color: #ffe9b3;
+@body-color: lighten(@dark-color, 5%);
+@body-font-color: @body-color;
+@text-color: @body-color;
+@heading-text-color: @dark-color;
+@mute-text-color: @gray-color;
 
 @link-color: @primary-color;
-@link-hover-color: #3b49af;
+@link-color-dark: darken(@link-color, 10%);
+@link-hover-color: @link-color-dark; // #3b49af;
 @link-active-color: @link-hover-color;
 
-@disabled-color: @gray-light-color;
+@disabled-color: @gray-color-light;
 
-@body-background : #fff;
-@heading-color : fade(#000, 85%);
-@text-color-secondary : fade(#000, 43%);
-@heading-color-dark : fade(#fff, 97%);
-@text-color-dark : fade(#fff, 91%);
-@text-color-secondary-dark: fade(#fff, 67%);
+@body-background: @bg-color-light;
 
 // Media queries breakpoints
 // Extra small screen / phone
@@ -76,6 +106,13 @@
 @screen-sm-max : (@screen-md-min - 1);
 @screen-md-max : (@screen-lg-min - 1);
 @screen-lg-max : (@screen-xl-min - 1);
+
+// Z-index
+@zindex-0: 1;
+@zindex-1: 100;
+@zindex-2: 200;
+@zindex-3: 300;
+@zindex-4: 400;
 
 // Grid system
 @grid-columns : 24;

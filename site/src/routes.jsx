@@ -12,6 +12,7 @@ import Documentation from "./pages/doc";
 import NotFound from "./pages/notFound";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Test from "./components/test";
 
 const isValidPath = path => {
     const indexReg = /\/(index)?\/?(zh-CN|en-US)?\/?$/i;
@@ -74,6 +75,7 @@ class Wrapper extends React.Component {
                         <Route component={NotFound} />
                     </Switch>
                     <Footer />
+                    <Test />
                 </div>
             </Router>
         );
