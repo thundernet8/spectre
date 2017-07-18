@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout renders correctly 1`] = `
+<div
+  className="spt-layout"
+>
+  <div
+    className="spt-layout-header"
+  >
+    Header
+  </div>
+  <div
+    className="spt-layout spt-layout-has-sider"
+  >
+    <div
+      className="spt-layout-content"
+    >
+      Main content
+    </div>
+    <div
+      className="spt-layout-sider"
+      style={
+        Object {
+          "flex": "0 0 200px",
+          "width": "200px",
+        }
+      }
+    >
+      <div
+        className="spt-layout-sider-children"
+      >
+        Right sidebar
+      </div>
+    </div>
+  </div>
+  <div
+    className="spt-layout-footer"
+  >
+    Footer
+  </div>
+</div>
+`;

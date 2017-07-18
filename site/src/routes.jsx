@@ -61,7 +61,7 @@ class Wrapper extends React.Component {
                         />
                         <Route
                             exact
-                            path="/componets/:componentName/:language"
+                            path="/components/:componentName/:language"
                             component={SpectreComponent}
                         />
                         <Route
