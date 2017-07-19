@@ -24,8 +24,16 @@
     }
 
     .@{prefix}-navbar-brand {
+        color: @body-color;
         font-size: @font-size-lg;
         font-weight: 500;
         text-decoration: none;
+    }
+
+    .@{prefix}-btn-link {
+        color: @gray-color-dark;
+        &.active {
+            color: @link-hover-color;
+        }
     }
 }

@@ -38,9 +38,9 @@ export default class NavBar extends React.Component<NavBarProps, any> {
             return element;
         });
         return (
-            <header className={classNames(className, prefixCls)} style={style}>
+            <nav className={classNames(className, prefixCls)} style={style}>
                 {sections}
-            </header>
+            </nav>
         );
     }
 }

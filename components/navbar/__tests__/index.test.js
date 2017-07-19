@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { mount } from "enzyme";
 import renderer from "react-test-renderer";
 import NavBar from "..";
 
@@ -7,7 +7,7 @@ const NavSection = NavBar.Section;
 
 describe("NavBar", () => {
     it("should render NavBar and NavSection", () => {
-        const navbar = shallow(
+        const navbar = mount(
             <NavBar>
                 <NavSection>Left section</NavSection>
                 <NavSection center>Center section</NavSection>
@@ -15,9 +15,11 @@ describe("NavBar", () => {
             </NavBar>
         );
 
-        expect(navbar.type()).toEqual("header");
+        // expect(navbar.find("section").get(0).tagName).toEqual("header");
 
         expect(navbar.hasClass("spt-navbar")).toBe(true);
+
+        expect(navbar.find("section").get(0).tagName).toEqual("SECTION");
 
         expect(navbar.childAt(0).hasClass("spt-navbar-section")).toBe(true);
 
