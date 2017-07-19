@@ -65,7 +65,6 @@
         "test": "jest --config .jest.js",
         "dist": "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --hide-modules --colors --config webpack.config.babel.js",
         "lib": "rimraf lib && tsc && rcp './components/**/*.less' ./lib",
-        "prepublish": "npm run dist && npm run lib && npm run lint",
         "lint": "npm run lint:ts && npm run lint:es && npm run lint:style",
         "lint:ts": "tsc && tslint -e node_modules typings -c .tslintrc.json components/**/*.tsx",
         "lint:es": "eslint tests components site/src ./webpack.config.babel.js --ext '.js,.jsx'",
@@ -90,7 +89,10 @@
         "classnames": "^2.2.5",
         "omit.js": "^1.0.0",
         "prop-types": "^15.5.10",
+        "rc-animate": "^2.4.0",
+        "rc-checkbox": "^2.0.3",
         "react": "^15.6.1",
-        "react-dom": "^15.6.1"
+        "react-dom": "^15.6.1",
+        "shallowequal": "^1.0.2"
     }
 }

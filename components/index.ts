@@ -13,6 +13,8 @@ export { default as Button } from "./button";
 
 export { default as Breadcrumb } from "./breadcrumb";
 
+export { default as Checkbox } from "./checkbox";
+
 export { default as Col } from "./col";
 
 export { default as Icon } from "./icon";
@@ -21,6 +23,10 @@ export { default as Layout } from "./layout";
 
 export { default as NavBar } from "./navbar";
 
+export { default as Radio } from "./radio";
+
 export { default as Row } from "./row";
+
+export { default as Spin } from "./spin";
 
 export { default as version } from "./version";
