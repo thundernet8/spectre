@@ -2,10 +2,10 @@
 // Buttons
 .@{prefix}-btn {
     appearance: none;
-    background: @bg-color-light;
-    border: @border-width solid @primary-color;
+    background: @btn-default-bg;
+    border: @border-width solid @btn-default-border;
     border-radius: @border-radius;
-    color: @link-color;
+    color: @btn-default-color;
     .control-transition();
     cursor: pointer;
     display: inline-block;
@@ -47,9 +47,9 @@
 
     // Button Primary
     &.@{prefix}-btn-primary {
-        background: @primary-color;
+        background: @btn-primary-bg;
         border-color: @primary-color-dark;
-        color: @light-color;
+        color: @btn-primary-color;
         &:focus,
         &:hover {
             background: darken(@primary-color-dark, 2%);

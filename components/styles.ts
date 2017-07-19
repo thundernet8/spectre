@@ -9,3 +9,5 @@ import "./layout/style/index.less";
 import "./breadcrumb/style/index.less";
 import "./navbar/style/index.less";
 import "./spin/style/index.less";
+import "./checkbox/style/index.less";
+import "./radio/style/index.less";

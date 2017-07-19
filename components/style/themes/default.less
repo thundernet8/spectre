@@ -28,6 +28,7 @@
 @layout-padding-lg: 1.5rem;
 @control-min-width: 18rem;
 @border-radius: .2rem;
+@border-radius-lg : 4px;
 @border-width: .1rem;
 
 // Colors
@@ -39,6 +40,20 @@
 @secondary-color-dark: darken(@secondary-color, 3%);
 @secondary-color-light: lighten(@secondary-color, 3%);
 
+// Primary series
+@primary-1: tint(@primary-color, 90%);
+@primary-2: tint (@primary-color, 80%);
+// unused
+@primary-3: tint(@primary-color, 60%);
+@primary-4: tint(@primary-color, 40%);
+// Color used to control the text color in many active and hover states.
+@primary-5: tint(@primary-color, 20%);
+@primary-6: @primary-color; // don't use, use @primary-color
+// Color used to control the text color of active buttons.
+@primary-7: tint(@primary-color, 8%);
+// unused
+@primary-8: tint(@primary-color, 5%);
+
 // Gray colors
 @dark-color: #454d5d;
 @light-color: #fff;
@@ -48,9 +63,11 @@
 
 @border-color: lighten(@gray-color-light, 3%);
 @border-color-dark: darken(@border-color, 15%);
+@border-color-base: @border-color-dark;
 @bg-color: lighten(@dark-color, 66%);
 @bg-color-dark: darken(@bg-color, 3%);
 @bg-color-light: @light-color;
+@background-color-base: @bg-color;
 
 // Control colors
 @control-color-success: #32b643;
@@ -79,6 +96,7 @@
 @link-active-color: @link-hover-color;
 
 @disabled-color: @gray-color-light;
+@disabled-bg: @bg-color;
 
 @body-background: @bg-color-light;
 @component-background: @light-color;
@@ -155,3 +173,63 @@
 @card-head-height: 48px;
 @card-head-color: @heading-color;
 @card-head-background: @component-background;
+
+// Buttons
+@btn-font-weight : 500;
+@btn-border-radius-base : @border-radius-lg;
+@btn-border-radius-sm : @border-radius-lg;
+
+@btn-primary-color : @light-color;
+@btn-primary-bg : @primary-color;
+
+@btn-default-color : @link-color;
+@btn-default-bg : @bg-color-light;
+@btn-default-border : @primary-color;
+
+@btn-danger-color : @error-color;
+@btn-danger-bg : @background-color-base;
+@btn-danger-border : @border-color-base;
+
+@btn-disable-color : @disabled-color;
+@btn-disable-bg : @disabled-bg;
+@btn-disable-border : @border-color-base;
+
+@btn-padding-base : 0 15px;
+@btn-font-size-lg : @font-size-lg;
+@btn-padding-lg : @btn-padding-base;
+@btn-padding-sm : 0 7px;
+
+@btn-height-base : 28px;
+@btn-height-lg : 32px;
+@btn-height-sm : 22px;
+
+@btn-circle-size : @btn-height-base;
+@btn-circle-size-lg : @btn-height-lg;
+@btn-circle-size-sm : @btn-height-sm;
+
+@btn-group-border : @border-color;
+
+// Radio buttons
+@radio-button-bg : @btn-default-bg;
+@radio-button-color : @btn-default-color;
+
+// Input
+// ---
+@input-height-base : 28px;
+@input-height-lg : 32px;
+@input-height-sm : 22px;
+@input-padding-horizontal : 7px;
+@input-padding-vertical-base : 4px;
+@input-padding-vertical-sm : 1px;
+@input-padding-vertical-lg : 6px;
+@input-placeholder-color : @disabled-color;
+@input-color : @text-color;
+@input-border-color : @border-color;
+@input-bg : #fff;
+@input-addon-bg : #eee;
+@input-hover-border-color : @primary-color;
+@input-disabled-bg : @disabled-bg;
+
+// Border
+@border-width-base: @border-width;
+@border-style-base : solid;

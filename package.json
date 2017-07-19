@@ -76,8 +76,12 @@
         "site": "npm run lib && cd site && npm run dev"
     },
     "lint-staged": {
-        "components/**/*.tsx": ["lint-staged:ts"],
-        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
+        "components/**/*.tsx": [
+            "lint-staged:ts"
+        ],
+        "{tests,components}/**/*.{js,jsx}": [
+            "lint-staged:es"
+        ],
         "{components,site}/**/*.less": "stylelint --syntax less"
     },
     "pre-commit": "lint-staged",
@@ -86,7 +90,9 @@
         "omit.js": "^1.0.0",
         "prop-types": "^15.5.10",
         "rc-animate": "^2.4.0",
+        "rc-checkbox": "^2.0.3",
         "react": "^15.6.1",
-        "react-dom": "^15.6.1"
+        "react-dom": "^15.6.1",
+        "shallowequal": "^1.0.2"
     }
 }
