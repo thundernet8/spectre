@@ -23,4 +23,6 @@ export { default as NavBar } from "./navbar";
 
 export { default as Row } from "./row";
 
+export { default as Spin } from "./spin";
+
 export { default as version } from "./version";

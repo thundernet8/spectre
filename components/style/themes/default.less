@@ -68,6 +68,7 @@
 @body-color: lighten(@dark-color, 5%);
 @body-font-color: @body-color;
 @text-color: @body-color;
+@text-color-secondary: lighten(@text-color, 5%);
 @heading-color: @dark-color;
 @heading-text-color: @heading-color;
 @mute-text-color: @gray-color;
@@ -80,6 +81,7 @@
 @disabled-color: @gray-color-light;
 
 @body-background: @bg-color-light;
+@component-background: @light-color;
 
 // Media queries breakpoints
 // Extra small screen / phone
@@ -143,3 +145,13 @@
 @layout-trigger-height : 48px;
 @layout-zero-trigger-width : 36px;
 @layout-zero-trigger-height : 42px;
+
+// Spin
+@spin-dot-size-sm: 14px;
+@spin-dot-size: 20px;
+@spin-dot-size-lg: 32px;
+
+// Card
+@card-head-height: 48px;
+@card-head-color: @heading-color;
+@card-head-background: @component-background;
