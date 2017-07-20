@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import shallowEqual from "shallowequal";
 import Radio from "./radio";
-import { AbstractCheckboxGroupProps } from "../checkbox/Group";
+import { AbstractCheckboxGroupProps } from "../checkbox/group";
 
 function getCheckedValue(children) {
     let value = null;

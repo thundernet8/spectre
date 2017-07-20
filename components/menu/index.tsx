@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import animation from "../_utils/animation";
 import warning from "warning";
-import Item from "./MenuItem";
+import Item from "./menuItem";
 
 export interface SelectParam {
     key: string;

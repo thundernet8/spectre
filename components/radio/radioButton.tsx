@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AbstractCheckboxProps } from "../checkbox/Checkbox";
+import { AbstractCheckboxProps } from "../checkbox/checkbox";
 import Radio from "./radio";
 
 export type RadioButtonProps = AbstractCheckboxProps;
