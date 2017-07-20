@@ -21,10 +21,10 @@ export default class Test extends React.Component {
                     shape="square"
                     size="large"
                 />
-                <Checkbox checked={true} disabled>
+                <Checkbox checked disabled>
                     Checkbox
                 </Checkbox>
-                <Checkbox checked={true}>Checkbox</Checkbox>
+                <Checkbox checked>Checkbox</Checkbox>
                 <Checkbox checked={false}>Checkbox</Checkbox>
                 <RadioGroup value={2}>
                     <Radio value={1}>A</Radio>

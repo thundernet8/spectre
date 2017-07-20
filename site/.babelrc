@@ -7,7 +7,7 @@
             "transform-es2015-modules-commonjs",
             {
                 "allowTopLevelThis": true,
-                "loose": ["es6.modules"]
+                "loose": true
             }
         ]
     ]

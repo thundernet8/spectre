@@ -1672,7 +1672,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.6.0:
+create-react-class@15.x, create-react-class@^15.5.2, create-react-class@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.0.tgz#ab448497c26566e1e29413e883207d57cfe7bed4"
   dependencies:
@@ -1723,7 +1723,7 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
 
-css-animation@1.x:
+css-animation@1.x, css-animation@^1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/css-animation/-/css-animation-1.3.2.tgz#df515820ef5903733ad2db0999403b3037b8b880"
   dependencies:
@@ -2007,6 +2007,14 @@ doiuse@^2.4.1:
     source-map "^0.4.2"
     through2 "^0.6.3"
     yargs "^3.5.4"
+
+dom-align@1.x:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/dom-align/-/dom-align-1.6.2.tgz#b14e64917c25de6b4055227339b4d64f4b7db885"
+
+dom-scroll-into-view@1.x:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/dom-scroll-into-view/-/dom-scroll-into-view-1.2.1.tgz#e8f36732dd089b0201a88d7815dc3f88e6d66c7e"
 
 dom-serializer@0, dom-serializer@~0.1.0:
   version "0.1.0"
@@ -5054,7 +5062,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.10:
+prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -5123,7 +5131,15 @@ randombytes@^2.0.0, randombytes@^2.0.1:
   dependencies:
     safe-buffer "^5.1.0"
 
-rc-animate@^2.4.0:
+rc-align@2.x:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/rc-align/-/rc-align-2.3.4.tgz#d83bdab7560f0142e72a3de1d495dab6ba225249"
+  dependencies:
+    dom-align "1.x"
+    prop-types "^15.5.8"
+    rc-util "4.x"
+
+rc-animate@2.x, rc-animate@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/rc-animate/-/rc-animate-2.4.0.tgz#a51b47dadf8ad9af08cddfb5b0217bfa81aee803"
   dependencies:
@@ -5140,7 +5156,38 @@ rc-checkbox@^2.0.3:
     prop-types "15.x"
     rc-util "^4.0.4"
 
-rc-util@^4.0.4:
+rc-menu@^5.0.10:
+  version "5.0.10"
+  resolved "https://registry.yarnpkg.com/rc-menu/-/rc-menu-5.0.10.tgz#266cf12e5844ba2606730b9198422da04d102b7e"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    create-react-class "^15.5.2"
+    dom-scroll-into-view "1.x"
+    prop-types "^15.5.6"
+    rc-animate "2.x"
+    rc-util "^4.0.2"
+
+rc-tooltip@^3.4.7:
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/rc-tooltip/-/rc-tooltip-3.4.7.tgz#ec6cc39a962de96a9147de08a78fb38f93517ff3"
+  dependencies:
+    babel-runtime "^6.23.0"
+    prop-types "^15.5.8"
+    rc-trigger "1.x"
+
+rc-trigger@1.x:
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/rc-trigger/-/rc-trigger-1.11.2.tgz#5c75a1928814a0595e3d912e0a15ca853df5464d"
+  dependencies:
+    babel-runtime "6.x"
+    create-react-class "15.x"
+    prop-types "15.x"
+    rc-align "2.x"
+    rc-animate "2.x"
+    rc-util "4.x"
+
+rc-util@4.x, rc-util@^4.0.2, rc-util@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.0.4.tgz#99813dd90aee7e29b64939a70ac176ead3f4ff39"
   dependencies:
