@@ -2,6 +2,7 @@ import path from "path";
 import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
+import SimpleProgressWebpackPlugin from "customized-progress-webpack-plugin";
 import pkg from "./package.json";
 
 const getPlugins = (minimal = true) => {
@@ -24,7 +25,8 @@ const getPlugins = (minimal = true) => {
             cssProcessor: require("cssnano"), // eslint-disable-line global-require
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: true
-        })
+        }),
+        new SimpleProgressWebpackPlugin({ format: "compact" })
     ];
     if (minimal) {
         plugins.push(
