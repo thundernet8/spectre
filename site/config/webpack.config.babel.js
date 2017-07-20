@@ -5,6 +5,7 @@ import ExtractTextPlugin from "extract-text-webpack-plugin";
 import WebpackStableChunkId from "webpackstablechunkid";
 import OptimizeCssAssetsPlugin from "optimize-css-assets-webpack-plugin";
 import { WebpackBundleSizeAnalyzerPlugin } from "webpack-bundle-size-analyzer";
+import SimpleProgressWebpackPlugin from "customized-progress-webpack-plugin";
 const vendorsConfig = require("../dist/vendors-config.json");
 
 export const port = process.env.PORT || 8000;
@@ -12,6 +13,7 @@ export const __DEV__ = process.env.NODE_ENV !== "production";
 
 const getPlugins = () => {
     let plugins = [
+        new SimpleProgressWebpackPlugin({ format: "compact" }),
         new WebpackBundleSizeAnalyzerPlugin(
             path.resolve(__dirname, "../reports/bundle-report.txt")
         ),

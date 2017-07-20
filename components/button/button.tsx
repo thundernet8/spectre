@@ -164,7 +164,7 @@ export default class Button extends React.Component<ButtonProps, any> {
             return (
                 <a
                     href={link}
-                    {...omit(others, ["clicked"])}
+                    {...omit(others, ["loading", "clicked"])}
                     className={classes}
                     onMouseUp={this.handleMouseUp}
                     onClick={this.handleClick}
@@ -191,7 +191,9 @@ export default class Button extends React.Component<ButtonProps, any> {
 
 export class LinkButton extends React.Component<ButtonProps, any> {
     render() {
-        const props = Object.assign({}, this.props, { isLink: true });
+        const props = Object.assign({}, this.props, {
+            isLink: true
+        });
         return <Button {...props} />;
     }
 }
