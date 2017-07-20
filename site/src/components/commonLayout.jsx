@@ -4,6 +4,7 @@ import Breadcrumb from "Spt/breadcrumb";
 // import Icon from "Spt/icon";
 import SiteHeader from "./header";
 import SiteFooter from "./footer";
+import SideMenu from "./sideMenu";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -22,8 +23,8 @@ export default class CommonLayout extends React.Component {
                     </Breadcrumb>
                     <Layout style={{ padding: "24px 0", background: "#fff" }}>
                         {this.props.sider ||
-                            <Sider width={200} style={{ background: "#fff" }}>
-                                Left menu
+                            <Sider width={240} style={{ background: "#fff" }}>
+                                <SideMenu />
                             </Sider>}
                         <Content style={{ padding: "0 24px", minHeight: 280 }}>
                             {this.props.children}

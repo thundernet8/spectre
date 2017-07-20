@@ -1,11 +1,12 @@
 @import "../../style/mixins/index";
 
 @menu-prefix-cls: ~"@{prefix}-menu";
+@ant-prefix: ant;
 
 // default theme
 .@{menu-prefix-cls} {
     outline: none;
-    margin-bottom: 0;
+    margin: 0;
     padding-left: 0; // Override default ul/ol
     list-style: none;
     z-index: @zindex-dropdown;
@@ -183,7 +184,7 @@
             &:after {
                 display: none;
             }
-            .@{iconfont-css-prefix} {
+            .icon {
                 font-size: 16px;
                 line-height: 42px;
                 margin: 0;
@@ -195,7 +196,7 @@
         }
         &-tooltip {
             pointer-events: none;
-            .@{iconfont-css-prefix} {
+            .icon {
                 display: none;
             }
             a {
@@ -234,7 +235,7 @@
         display: block;
         white-space: nowrap;
 
-        .@{iconfont-css-prefix} {
+        .icon {
             min-width: 14px;
             margin-right: 8px;
             transition: all .3s;
@@ -295,7 +296,7 @@
             content: "\e61d";
             right: 16px;
             top: 0;
-            .iconfont-size-under-12px(8px);
+            font-size: 1rem;
         }
 
         &-open {
@@ -422,11 +423,43 @@
     }
 }
 
+// Customize light theme
+.@{menu-prefix-cls} {
+    &-light {
+        border-right: none !important;
+        color: @gray-color-dark;
+
+        .@{menu-prefix-cls} {
+            &-submenu-title {
+                font-weight: 500;
+                line-height: 20px !important;
+                height: 20px !important;
+                &:after {
+                    display: none;
+                }
+            }
+            &-item {
+                line-height: 30px !important;
+                height: 30px !important;
+                &:after {
+                    display: none;
+                }
+                &-selected {
+                    background: transparent !important;
+                }
+            }
+            &-sub {
+                color: @gray-color;
+            }
+        }
+    }
+}
+
 // dark theme
 .@{menu-prefix-cls} {
     &-dark,
     &-dark &-sub {
-        color: @text-color-secondary-dark;
+        color: @text-color-dark;
         background: @menu-dark-bg;
     }
 
@@ -447,7 +480,7 @@
     &-dark &-item,
     &-dark &-item-group-title,
     &-dark &-item > a {
-        color: @text-color-secondary-dark;
+        color: @text-color-dark;
     }
 
     &-dark&-inline,

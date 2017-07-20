@@ -23,12 +23,17 @@
 @html-line-height: 1.428571429;
 @line-height-base : 1.5;
 
+// ICONFONT
+@iconfont-css-prefix : anticon;
+@icon-url : "https://at.alicdn.com/t/font_zck90zmlh7hf47vi";
+
 // Sizes
 @layout-padding: 1rem;
 @layout-padding-lg: 1.5rem;
 @control-min-width: 18rem;
 @border-radius: .2rem;
-@border-radius-lg : 4px;
+@border-radius-base: .4rem;
+@border-radius-lg : .4rem;
 @border-width: .1rem;
 
 // Colors
@@ -86,6 +91,7 @@
 @body-font-color: @body-color;
 @text-color: @body-color;
 @text-color-secondary: lighten(@text-color, 5%);
+@text-color-dark: darken(@text-color, 5%);
 @heading-color: @dark-color;
 @heading-text-color: @heading-color;
 @mute-text-color: @gray-color;
@@ -96,6 +102,7 @@
 @link-active-color: @link-hover-color;
 
 @disabled-color: @gray-color-light;
+@disabled-color-dark : fade(#fff, 35%);
 @disabled-bg: @bg-color;
 
 @body-background: @bg-color-light;
@@ -134,6 +141,17 @@
 @zindex-2: 200;
 @zindex-3: 300;
 @zindex-4: 400;
+// z-index list
+@zindex-affix : 10;
+@zindex-back-top : 10;
+@zindex-modal-mask : 1000;
+@zindex-modal : 1000;
+@zindex-notification : 1010;
+@zindex-message : 1010;
+@zindex-popover : 1030;
+@zindex-picker : 1050;
+@zindex-dropdown : 1050;
+@zindex-tooltip : 1060;
 
 // Animation
 @ease-out : cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -233,3 +251,36 @@
 // Border
 @border-width-base: @border-width;
 @border-style-base : solid;
+@border-color-split : @border-color-base;
+
+// Tooltip
+//* Tooltip max width
+@tooltip-max-width: 250px;
+//** Tooltip text color
+@tooltip-color: #fff;
+//** Tooltip background color
+@tooltip-bg: rgba(64, 64, 64, .85);
+//** Tooltip arrow width
+@tooltip-arrow-width: 5px;
+//** Tooltip distance with trigger
+@tooltip-distance: @tooltip-arrow-width - 1 + 4;
+//** Tooltip arrow color
+@tooltip-arrow-color: @tooltip-bg;
+
+// Shadow
+@shadow-color : rgba(0, 0, 0, .2);
+@box-shadow-base : @shadow-1-down;
+@shadow-1-up : 0 -1px 6px @shadow-color;
+@shadow-1-down : 0 1px 6px @shadow-color;
+@shadow-1-left : -1px 0 6px @shadow-color;
+@shadow-1-right : 1px 0 6px @shadow-color;
+@shadow-2 : 0 2px 8px @shadow-color;
+
+// The background colors for active and hover states for things like
+// list items or table cells.
+@item-active-bg : @primary-1;
+@item-hover-bg : @primary-1;
+
+// Menu
+@menu-dark-bg: @layout-header-background;
+@menu-dark-submenu-bg: #333;

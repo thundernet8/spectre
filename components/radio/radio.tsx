@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import RcCheckbox from "rc-checkbox";
 import classNames from "classnames";
 import shallowEqual from "shallowequal";
-import { AbstractCheckboxProps } from "../checkbox/Checkbox";
+import { AbstractCheckboxProps } from "../checkbox/checkbox";
 import RadioGroup from "./group";
 import RadioButton from "./radioButton";
 

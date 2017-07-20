@@ -16,7 +16,8 @@ const Icon = (props: IconProps) => {
     const { fontset, type, className = "", spin } = props;
     const classString = classNames(
         {
-            spticon: true,
+            icon: true,
+            spticon: !fontset,
             "spticon-spin": !!spin || type === "loading",
             [`spticon-${type}`]: !fontset,
             [`${fontset}`]: fontset,
