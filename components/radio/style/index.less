@@ -53,32 +53,15 @@
         visibility: visible;
     }
     &-inner {
-        &:after {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            left: 3px;
-            top: 3px;
-            border-radius: @border-radius-lg;
-            display: table;
-            border-top: 0;
-            border-left: 0;
-            content: ' ';
-            background-color: @primary-color;
-            opacity: 0;
-            transform: scale(0);
-            transition: all @radio-duration @ease-in-out-circ;
-        }
-
         position: relative;
         top: 0;
         left: 0;
         display: block;
-        width: 14px;
-        height: 14px;
+        width: 1.4rem;
+        height: 1.4rem;
         border-width: 1px;
         border-style: solid;
-        border-radius: 14px;
+        border-radius: 50%;
         border-color: @border-color-dark;
         background-color: @radio-button-bg;
         transition: all @radio-duration;
@@ -99,11 +82,19 @@
 // 选中状态
 .@{radio-prefix-cls}-checked {
     .@{radio-inner-prefix-cls} {
+        background: @primary-color;
         border-color: @primary-color;
         &:after {
-            transform: scale(1);
-            opacity: 1;
-            transition: all @radio-duration @ease-in-out-circ;
+            background: #fff;
+            border-radius: .2rem;
+            content: " ";
+            height: .4rem;
+            left: 50%;
+            margin-left: -.2rem;
+            margin-top: -.2rem;
+            position: absolute;
+            top: 50%;
+            width: .4rem;
         }
     }
 }

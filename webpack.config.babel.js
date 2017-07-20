@@ -43,15 +43,17 @@ const getPlugins = (minimal = true) => {
     return plugins;
 };
 
-const genConfig = minimal => ({
+const genConfig = (minimal, entry = "js") => ({
     devtool: "#source-map", // '#eval-source-map'
     node: {
         __filename: false,
         __dirname: false
     },
     entry: {
-        spectre: ["./components/index.ts"],
-        spectreStyle: ["./components/styles.ts"]
+        spectre:
+            entry === "js"
+                ? ["./components/index.ts"]
+                : ["./components/styles.ts"]
     },
     output: {
         path: path.resolve(__dirname, "./dist"),
@@ -88,4 +90,9 @@ const genConfig = minimal => ({
     plugins: getPlugins(minimal)
 });
 
-export default [genConfig(false), genConfig(true)];
+export default [
+    genConfig(false),
+    genConfig(true),
+    genConfig(false, "style"),
+    genConfig(true, "style")
+];

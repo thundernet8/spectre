@@ -21,6 +21,8 @@ export { default as Icon } from "./icon";
 
 export { default as Layout } from "./layout";
 
+export { default as Menu } from "./menu";
+
 export { default as NavBar } from "./navbar";
 
 export { default as Radio } from "./radio";
@@ -28,5 +30,7 @@ export { default as Radio } from "./radio";
 export { default as Row } from "./row";
 
 export { default as Spin } from "./spin";
+
+export { default as Tooltip } from "./tooltip";
 
 export { default as version } from "./version";

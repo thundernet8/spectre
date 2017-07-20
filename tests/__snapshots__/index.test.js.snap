@@ -4,11 +4,14 @@ exports[`dist files export modules correctly 1`] = `
 Array [
   "Button",
   "Breadcrumb",
+  "Checkbox",
   "Col",
   "Icon",
   "Layout",
   "NavBar",
+  "Radio",
   "Row",
+  "Spin",
   "version",
 ]
 `;

@@ -35,6 +35,8 @@ export interface ButtonProps {
 }
 
 export default class Button extends React.Component<ButtonProps, any> {
+    static __SPT_BUTTON = true;
+
     static Group: typeof Group;
 
     static defaultProps = {
