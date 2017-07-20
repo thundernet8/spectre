@@ -95,7 +95,8 @@ export default {
         extensions: [".js", ".jsx", ".less"],
         modules: [
             path.resolve(__dirname, "src"),
-            path.resolve(__dirname, "../node_modules")
+            path.resolve(__dirname, "../node_modules"),
+            path.resolve(__dirname, "../../node_modules")
         ],
         alias: {
             Spt: path.resolve(__dirname, "../../lib")

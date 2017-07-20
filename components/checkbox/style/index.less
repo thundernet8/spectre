@@ -42,27 +42,12 @@
         top: 0;
         left: 0;
         display: block;
-        width: 14px;
-        height: 14px;
+        width: 1.4rem;
+        height: 1.4rem;
         border: @border-width-base @border-style-base @border-color-base;
         border-radius: @border-radius;
         background-color: #fff;
         transition: all .3s;
-
-        &:after {
-            transform: rotate(45deg) scale(0);
-            position: absolute;
-            left: 4px;
-            top: 1px;
-            display: table;
-            width: 5px;
-            height: 8px;
-            border: 2px solid #fff;
-            border-top: 0;
-            border-left: 0;
-            content: ' ';
-            transition: all .1s @ease-in-back;
-        }
     }
 
     &-input {
@@ -92,18 +77,21 @@
 
 // 选中状态
 .@{checkbox-prefix-cls}-checked .@{checkbox-inner-prefix-cls}:after {
-    transform: rotate(45deg) scale(1);
+    background-clip: padding-box;
+    border: .2rem solid #fff;
+    border-left-width: 0;
+    border-top-width: 0;
+    content: "";
+    height: 1rem;
+    left: 50%;
+    margin-left: -.3rem;
+    margin-top: -.6rem;
     position: absolute;
-    left: 4px;
-    top: 1px;
-    display: table;
-    width: 5px;
-    height: 8px;
-    border: 2px solid #fff;
-    border-top: 0;
-    border-left: 0;
-    content: ' ';
-    transition: all .2s @ease-out-back .1s;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: .6rem;
 }
 
 .@{checkbox-prefix-cls}-checked,
