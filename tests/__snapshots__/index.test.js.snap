@@ -8,10 +8,12 @@ Array [
   "Col",
   "Icon",
   "Layout",
+  "Menu",
   "NavBar",
   "Radio",
   "Row",
   "Spin",
+  "Tooltip",
   "version",
 ]
 `;

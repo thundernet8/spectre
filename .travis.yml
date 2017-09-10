@@ -22,7 +22,7 @@ install:
 
 script:
     - yarn lint
-    - yarn dist
+    - yarn build
     - yarn lib
     - yarn test
 

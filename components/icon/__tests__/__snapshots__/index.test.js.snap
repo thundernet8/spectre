@@ -2,13 +2,13 @@
 
 exports[`Icon icon renders correctly 1`] = `
 <i
-  className="spticon spticon-upward"
+  className="icon spticon spticon-upward"
 />
 `;
 
 exports[`Icon icon renders correctly 2`] = `
 <i
-  className="spticon fa fa-home"
+  className="icon fa fa-home"
   fontset="fa"
 />
 `;

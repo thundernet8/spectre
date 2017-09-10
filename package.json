@@ -63,13 +63,17 @@
         "webpack": "^3.2.0"
     },
     "scripts": {
-        "test": "jest --config .jest.js",
-        "build": "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --hide-modules --colors --config webpack.config.babel.js",
+        "test": "jest --config .jest.js --updateSnapshot",
+        "build":
+            "rimraf dist && mkdirp dist && cross-env NODE_ENV=production webpack --hide-modules --colors --config webpack.config.babel.js",
         "lib": "rimraf lib && tsc && rcp './components/**/*.less' ./lib",
         "lint": "npm run lint:ts && npm run lint:es && npm run lint:style",
-        "lint:ts": "tsc && tslint -e node_modules typings -c .tslintrc.json components/**/*.tsx",
-        "lint:es": "eslint tests components site/src ./webpack.config.babel.js --ext '.js,.jsx'",
-        "lint:style": "stylelint \"{site/src,components}/**/*.less\" --syntax less",
+        "lint:ts":
+            "tsc && tslint -e node_modules typings -c .tslintrc.json components/**/*.tsx",
+        "lint:es":
+            "eslint tests components site/src ./webpack.config.babel.js --ext '.js,.jsx'",
+        "lint:style":
+            "stylelint \"{site/src,components}/**/*.less\" --syntax less",
         "lint-staged": "lint-staged",
         "lint-staged:ts": "tsc && tslint --fix -c .tslintrc.json",
         "lint-staged:es": "eslint ./webpack.config.babel.js",
@@ -77,12 +81,8 @@
         "site": "npm run lib && cd site && npm run dev"
     },
     "lint-staged": {
-        "components/**/*.tsx": [
-            "lint-staged:ts"
-        ],
-        "{tests,components}/**/*.{js,jsx}": [
-            "lint-staged:es"
-        ],
+        "components/**/*.tsx": ["lint-staged:ts"],
+        "{tests,components}/**/*.{js,jsx}": ["lint-staged:es"],
         "{components,site}/**/*.less": "stylelint --syntax less"
     },
     "pre-commit": "lint-staged",
